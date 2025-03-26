@@ -57,20 +57,22 @@ export function Header() {
                 Find Services
               </Link>
               <Link
-                href="/user-dashboard"
+                href="/dashboard/customer"
                 className="block px-3 py-2 text-gray-700 hover:bg-gray-50"
               >
                 My Bookings
               </Link>
               <Link
-                href="/provider-dashboard"
+                href="/dashboard/provider"
                 className="block px-3 py-2 text-gray-700 hover:bg-gray-50"
               >
                 For Providers
               </Link>
-              <button className="w-full text-left px-3 py-2 bg-blue-600 text-white">
-                Sign In
-              </button>
+              <Link href={"/auth/signin"}>
+                <button className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">
+                  Sign In
+                </button>
+              </Link>
             </div>
           </div>
         )}
