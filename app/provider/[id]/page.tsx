@@ -8,11 +8,11 @@ import {
   Calendar,
   Image,
 } from "lucide-react";
-import { Header } from "@/app/components/Header";
+import Navigation from "@/app/components/Navigation/Navigation";
 export default function ServiceProviderProfile() {
   return (
     <>
-      <Header />
+      <Navigation />
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Main Content */}

@@ -1,10 +1,10 @@
 import React from "react";
 import { Calendar, Clock, DollarSign, Users } from "lucide-react";
-import { Header } from "@/app/components/Header";
+import Navigation from "@/app/components/Navigation/Navigation";
 export default function ProviderDashboard() {
   return (
     <>
-      <Header />
+      <Navigation />
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex justify-between items-center mb-6">
           <h1 className="text-2xl font-bold">Provider Dashboard</h1>
