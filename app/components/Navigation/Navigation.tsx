@@ -15,15 +15,16 @@ export default function Navigation() {
   const navItems = currentUser
     ? [
         { id: "home", label: "Home", route: "/" },
-        { id: "dashboard", label: "Dashboard", route: "" },
-        { id: "profile", label: "Profile", route: "" },
+        { id: "dashboard", label: "Dashboard", route: "/dashboard" },
+        { id: "profile", label: "Profile", route: "/profile" },
       ]
     : [
         { id: "home", label: "Home", route: "/" },
         { id: "login", label: "Sign In", route: "/auth/signin" },
-        { id: "register", label: "Get Started", route: "" },
+        { id: "register", label: "Get Started", route: "/auth/register" },
       ];
 
+  const { logout } = useAuth();
   const handleNavigationClick = (link: string) => {
     router.push(`/${link}`);
   };
@@ -71,7 +72,10 @@ export default function Navigation() {
                 <span className="text-sm font-medium text-gray-700">
                   {currentUser.name}
                 </span>
-                <button className="text-sm text-gray-500 hover:text-gray-700">
+                <button
+                  className="text-sm text-gray-500 hover:text-gray-700"
+                  onClick={logout}
+                >
                   Sign Out
                 </button>
               </div>
