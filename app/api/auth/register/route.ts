@@ -19,6 +19,7 @@ export async function POST(request: NextRequest) {
 
     if (userType === "customer") {
       const user = await setDoc(doc(db, "users", uid), {
+        uid,
         name,
         email,
         phone,
@@ -33,6 +34,7 @@ export async function POST(request: NextRequest) {
       return res;
     }
     const user = await setDoc(doc(db, "users", uid), {
+      uid,
       name,
       email,
       phone,
