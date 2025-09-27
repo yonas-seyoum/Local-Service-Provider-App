@@ -10,16 +10,20 @@ export function middleware(request: NextRequest) {
   }
 
   if (pathname === "/dashboard" && !token) {
-    return NextResponse.redirect(new URL("/auth", request.url));
+    return NextResponse.redirect(new URL("/authsignin", request.url));
   }
 
   if (pathname === "/profile" && !token) {
-    return NextResponse.redirect(new URL("/auth", request.url));
+    return NextResponse.redirect(new URL("/authsignin", request.url));
+  }
+
+  if (pathname === "/auth") {
+    return NextResponse.redirect(new URL("/auth/signin", request.url));
   }
 
   return NextResponse.next();
 }
 
 export const config = {
-  matcher: ["/", "/auth", "/dashboard"],
+  matcher: ["/", "/auth", "/auth/signin", "/dashboard"],
 };
